@@ -1,5 +1,3 @@
-nes (117 sloc)  5.04 KB
-  
 from tweepy import API 
 from tweepy import Cursor
 from tweepy.streaming import StreamListener
@@ -7,10 +5,6 @@ from tweepy import OAuthHandler
 from tweepy import Stream
  
 import twitter_credentials
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
 
 # # # # TWITTER CLIENT # # # #
 class TwitterClient():
@@ -19,9 +13,6 @@ class TwitterClient():
         self.twitter_client = API(self.auth)
 
         self.twitter_user = twitter_user
-
-    def get_twitter_client_api(self):
-        return self.twitter_client
 
     def get_user_timeline_tweets(self, num_tweets):
         tweets = []
@@ -92,66 +83,20 @@ class TwitterListener(StreamListener):
             return False
         print(status)
 
-
-class TweetAnalyzer():
-    """
-    Functionality for analyzing and categorizing content from tweets.
-    """
-    def tweets_to_data_frame(self, tweets):
-        df = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['tweets'])
-
-        df['id'] = np.array([tweet.id for tweet in tweets])
-        df['len'] = np.array([len(tweet.text) for tweet in tweets])
-        df['date'] = np.array([tweet.created_at for tweet in tweets])
-        df['source'] = np.array([tweet.source for tweet in tweets])
-        df['likes'] = np.array([tweet.favorite_count for tweet in tweets])
-        df['retweets'] = np.array([tweet.retweet_count for tweet in tweets])
-
-        return df
-
  
 if __name__ == '__main__':
+ 
+    # Authenticate using config.py and connect to Twitter Streaming API.
+    hash_tag_list = ["corona", "#corona", "coronavirus", "#coronavirus", "covid", "#covid", "covid19",
+                        "#covid19", "covid-19", "#covid-19", "sarscov2", "#sarscov2", "sars cov2", "sars cov 2", 
+                         "covid_19", "#covid_19", "#ncov", "ncov", "#ncov2019", "ncov2019", "2019-ncov", "#2019-ncov", 
+                        "pandemic", "#pandemic" "#2019ncov", "2019ncov", "quarantine", "#quarantine", "flatten the curve", 
+                        "flattening the curve", "#flatteningthecurve", "#flattenthecurve", "hand sanitizer", "#handsanitizer",
+                        "#lockdown", "lockdown", "social distancing", "#socialdistancing", "work from home", "#workfromhome", "working from home", 
+                        "#workingfromhome", "#ppe", "#n95", "#covidiots", "covidiots", "herd immunity", "#herdimmunity", "pneumonia", "#pneumonia",
+                       "chinese virus", "#chinesevirus", "wuhan virus", "#wuhanvirus", "kung flu", "#kungflu", "wearamask", "#wearamask", "wear a mask",
+                       "vaccine", "vaccines", "#vaccine", "#vaccines", "corona vaccine", "corona vaccines", "#coronavaccine", "#coronavaccines" ]
+    fetched_tweets_filename = "tweets.txt"
 
-    twitter_client = TwitterClient()
-    tweet_analyzer = TweetAnalyzer()
-
-    api = twitter_client.get_twitter_client_api()
-
-    tweets = api.user_timeline(screen_name="realDonaldTrump", count=20)
-
-    #print(dir(tweets[0]))
-    #print(tweets[0].retweet_count)
-
-    df = tweet_analyzer.tweets_to_data_frame(tweets)
-
-    # Get average length over all tweets:
-    print(np.mean(df['len']))
-
-    # Get the number of likes for the most liked tweet:
-    print(np.max(df['likes']))
-
-    # Get the number of retweets for the most retweeted tweet:
-    print(np.max(df['retweets']))
-    
-    #print(df.head(10))
-
-    # Time Series
-    #time_likes = pd.Series(data=df['len'].values, index=df['date'])
-    #time_likes.plot(figsize=(16, 4), color='r')
-    #plt.show()
-    
-    #time_favs = pd.Series(data=df['likes'].values, index=df['date'])
-    #time_favs.plot(figsize=(16, 4), color='r')
-    #plt.show()
-
-    #time_retweets = pd.Series(data=df['retweets'].values, index=df['date'])
-    #time_retweets.plot(figsize=(16, 4), color='r')
-    #plt.show()
-
-    # Layered Time Series:
-    #time_likes = pd.Series(data=df['likes'].values, index=df['date'])
-    #time_likes.plot(figsize=(16, 4), label="likes", legend=True)
-
-    #time_retweets = pd.Series(data=df['retweets'].values, index=df['date'])
-    #time_retweets.plot(figsize=(16, 4), label="retweets", legend=True)
-    #plt.show()
+    twitter_client = TwitterClient('pycon')
+    print(twitter_client.get_user_timeline_tweets(1))
