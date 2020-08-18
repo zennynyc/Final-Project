@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <title>Bootstrap Visualization Dashboard</title>
 
@@ -31,7 +33,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="#" id="logo">TwitterCovid</a>
+              <a class="navbar-brand" href="index.html" id="logo">TwitterCovid</a>
             </div>
           </div>
 
@@ -73,6 +75,16 @@
         
       </section>
     </div>
+    <div id="overall_plot"></div>
+    <select id="selDataset">
+        <option value="all">All</option>
+        <option value="topic1">Reopening Schools</option>
+        <option value="topic2">2020 Election</option>
+        <option value="topic3">News, State of the Economy</option>
+        <option value="topic4">Policies on Mask Safety</option>
+        <option value="topic5">General Critics</option>
+    </select>
+    <script src="assets/js/trend.js"></script>
     <!-- End of container -->
 
     <!-- Start of footer -->
