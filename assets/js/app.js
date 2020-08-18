@@ -52,6 +52,7 @@ function updatePlotly(newdata) {
 }
 
 init();
+
 function initializeViz() {
   // JS object that points at empty div in the html
   var placeholderDiv = document.getElementById(“tableauViz”);
