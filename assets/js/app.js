@@ -52,3 +52,31 @@ function updatePlotly(newdata) {
 }
 
 init();
+function initializeViz() {
+  // JS object that points at empty div in the html
+  var placeholderDiv = document.getElementById(“tableauViz”);
+  // URL of the viz to be embedded
+  var url = “https://public.tableau.com/views/Visulization1_15977171914930/BagofWords?:language=en&:display_count=y&:origin=viz_share_link”;
+  // An object that contains options specifying how to embed the viz
+  var options = {
+    width: ‘600px’,
+    height: ‘600px’,
+    hideTabs: true,
+    hideToolbar: true,
+  };
+  viz = new tableau.Viz(placeholderDiv, url, options);
+}
+function initializeViz() {
+  // JS object that points at empty div in the html
+  var placeholderDiv = document.getElementById(“tableauViz”);
+  // URL of the viz to be embedded
+  var url = “https://public.tableau.com/shared/Z2H5S5HT8?:display_count=y&:origin=viz_share_link”;
+  // An object that contains options specifying how to embed the viz
+  var options = {
+    width: ‘600px’,
+    height: ‘600px’,
+    hideTabs: true,
+    hideToolbar: true,
+  };
+  viz = new tableau.Viz(placeholderDiv, url, options);
+}
