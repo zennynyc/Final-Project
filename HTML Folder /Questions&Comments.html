@@ -9,10 +9,10 @@
     <title>Bootstrap Visualization Dashboard</title>
 
     <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen">
 
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="../assets/css/styles.css" media="screen">
+    <link rel="stylesheet" href="assets/css/styles.css" media="screen">
 
   </head>
 
@@ -31,24 +31,27 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="../index.html" id="logo">TwitterSentiment</a>
+              <a class="navbar-brand" href="#" id="logo">TwitterCovid</a>
             </div>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                 <li><a href="temp.html">Max Temperature</a></li>
-                  <li><a href="humidity.html">Humidity</a></li>
-                  <li><a href="cloudiness.html">Cloudiness</a></li>
-                  <li><a href="wind.html">Wind Speed</a></li>
-                </ul>
-              </li>
-              <li><a href="../comparison.html">Comparison</a></li>
-              <li><a href="../data.html">Data</a></li>
+                <li><a href="Introduction.html">Introduction</a></li>
+                <li><a href="DataAnalysis.html">Data Analysis</a></li>
+                <li><a href="Database.html">Database</a></li>
+                <!-- <li><a href="Visualizations.html">Visualizations</a></li> -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizations <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="visualizations/topwords.html">Top words</a></li>
+                            <li><a href="visualizations/sentimentMap.html">The Sentiment Map</a></li>
+                            <li><a href="visualizations/overallTrend.html">The Overall Trend</a></li>
+                            <li><a href="visualizations/sentimentbreakdown.html">The breakdown of sentiment</a></li>
+                        </ul>
+                    </li>
+                <li><a href="Questions&Comments.html">Questions/Comments</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
@@ -61,27 +64,15 @@
       <section class="row">
         <div class="col-md-8">
           <article class="description-content">
-            <h1 class="description-header">Humidity</h1>
+            <h1 class="description-header">Questions/Comments</h1>
             <hr class="description-hr"/>
-            <img src="../assets/images/Fig2.png" alt="" class="img-responsive"/>
-            <p>With our current analysis, it is difficult to find any obvious correlation between latittude and humidity. There is a clear band of many data points at 100% humidity, and there do seem to be strong clusters of high humidity around the equator and in some other areas (e.g. a strong band of 0% humidity at latitude > 60). Further analysis is required.</p>
+            <p>Thank you, We hope you find the presentation knowledgeable</p>
           </article>
         </div>
         <div class="col-md-4">
 
           <!-- Start of Visualizations imageNav Area -->
-          <section id="imageNav-area">
-            <div class="imageNav-content">
-              <h2 class="imageNav-header">Visualizations</h2>
-              <hr />
-              <div id="images">
-                <a href="temp.html"><img src="../assets/images/Fig1.png" alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
-                <a href="humidity.html"><img src="../assets/images/Fig2.png" alt="Latitude vs. Humidity" class="imageNav-photo active"></a>
-                <a href="cloudiness.html"><img src="../assets/images/Fig3.png" alt="Latitude vs. Cloudiness" class="imageNav-photo"></a>
-                <a href="wind.html"><img src="../assets/images/Fig4.png" alt="Latitude vs. Wind Speed" class="imageNav-photo"></a>
-              </div>
-            </div>
-          </section>
+          
           <!-- End of the Visualizations imageNav Area -->
 
         </div>
@@ -93,7 +84,7 @@
     <footer class="footer navbar-fixed-bottom">
       <div class="two-toned-footer-color"></div>
       <p class="text-muted text-muted-footer text-center">
-        &copy; Copyright Coding Bootcamp 2017
+        &copy; Copyright Coding Bootcamp 2020:Final Project Kenny, Jason, Sam, Veronica, Zainab
       </p>
     </footer>
     <!-- End of footer -->
