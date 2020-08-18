@@ -52,3 +52,4 @@ function updatePlotly(newdata) {
 }
 
 init();
+//save
