@@ -60,8 +60,6 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- End of navbar -->
-
-    <!-- Start of container -->
     <!-- Start of container -->
     <div class="container">
       <section class="row">
@@ -69,8 +67,48 @@
           <article class="description-content">
             <h1 class="description-header">Data Database</h1>
             <hr class="description-hr"/>
-            <p>we save our data into mongo Database.</p>
           </article>
+          <div class="container">
+            <div class="row margin-top-50">
+              <div class="col-md-2">
+                <aside class="filters">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Filter Search</div>
+                    <div class="panel-body">
+                      <form>
+                        <div class="form-group">
+                          <ul class="list-group" id="filters">
+                            <li class="filter list-group-item">
+                              <label for="date">Enter a Sentiment</label>
+                              <input class="form-control" id="text" type="text" placeholder="Positive">
+                            </li>
+                          </ul>
+                        </div>
+                        <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                      </form>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+              <div class="col-md-10">
+                <div id="table-area" class="">
+                  <table id="HappinessIndex" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="table-head">Tweet</th>
+                        <th class="table-head">Happiness</th>
+                        <th class="table-head">Crime</th>
+                        <th class="table-head">Days of Sunshine</th>
+                        <th class="table-head">Birth per Woman</th>
+                        <th class="table-head">Innovation</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <a href='/Final-Project/assets/js/Twitter_data.xlsm' target="_blank">Download</a>
           <form>
